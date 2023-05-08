@@ -16,5 +16,8 @@
     "Visemes",
     "vrchat",
     "VRCSDK"
+  ],
+  "editor.rulers": [
+    120
   ]
 }
