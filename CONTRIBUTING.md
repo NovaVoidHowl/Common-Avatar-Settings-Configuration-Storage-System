@@ -28,6 +28,6 @@ All lines (for any file, excluding License files) must not exceed 120 characters
 The following files are used to enforce project standards and are not open to contributions,
 please do not ask for/suggest changes to them.
 
-- .pre-commit-config.yaml  
+- .pre-commit-config.yaml
 - .yamllint.yaml
 - .csharpierrc.yaml
