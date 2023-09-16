@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿#if UNITY_EDITOR
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -58,3 +59,4 @@ namespace com.NovaVoidHowl.dev.unity.CASCSS
     public const string WARNING_NO_COMPONENTS = "No avatar components found, import disabled";
   }
 }
+#endif
