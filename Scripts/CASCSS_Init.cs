@@ -1,5 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+#if UNITY_EDITOR
+// using System.Collections;
+// using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
@@ -34,10 +35,7 @@ namespace com.NovaVoidHowl.dev.unity.CASCSS
         );
         Debug.Log("[CASCSS_Init] Added NVH_CASCSS_EXISTS Scripting Symbol.");
       }
-      else
-      {
-        Debug.Log("[CASCSS_Init] NVH_CASCSS_EXISTS Scripting Symbol already exists.");
-      }
     }
   }
 }
+#endif

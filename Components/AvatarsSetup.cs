@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using System;
@@ -104,9 +105,6 @@ namespace com.NovaVoidHowl.dev.unity.CASCSS
 #if CVR_CCK_EXISTS
     private CVRAvatar chilloutVRComponent;
 #endif
-#if KAFE_CVR_CCK_EYE_MOVEMENT_FIX_EXISTS
-    private EyeRotationLimits eyeRotationLimitComponent;
-#endif
 #if VRC_SDK_VRCSDK3
     private VRCAvatarDescriptor vrchatComponent;
     private VRCAvatarDescriptor.CustomAnimLayer[] vrchatAnimLayerSetBase;
@@ -158,13 +156,14 @@ namespace com.NovaVoidHowl.dev.unity.CASCSS
       }
 #if KAFE_CVR_CCK_EYE_MOVEMENT_FIX_EXISTS
             // only can add the eye rotation limits if the fix is installed
-            eyeRotationLimitComponent = GetComponent<EyeRotationLimits>();
+           
 
-            if (eyeRotationLimitComponent == null)
+            if (GetComponent<EyeRotationLimits>() == null)
             {
                 // Add the component to the gameObject
-                eyeRotationLimitComponent = gameObject.AddComponent<EyeRotationLimits>();
+                gameObject.AddComponent<EyeRotationLimits>();
             }
+            EyeRotationLimits eyeRotationLimitComponent = GetComponent<EyeRotationLimits>();
             eyeRotationLimitComponent.LeftEyeMinX = leftEyeMinX;
             eyeRotationLimitComponent.LeftEyeMaxX = leftEyeMaxX;
             eyeRotationLimitComponent.LeftEyeMinY = leftEyeMinY;
@@ -391,7 +390,7 @@ namespace com.NovaVoidHowl.dev.unity.CASCSS
 
     private void Update()
     {
-      Debug.Log("Update trigger detected");
+      //Debug.Log("Update trigger detected");
       if (updateFromTarget)
       {
         Debug.Log("running update");
@@ -441,11 +440,12 @@ namespace com.NovaVoidHowl.dev.unity.CASCSS
       }
 #if KAFE_CVR_CCK_EYE_MOVEMENT_FIX_EXISTS
             // Check if the eye rotation component exists
-            eyeRotationLimitComponent = GetComponent<EyeRotationLimits>();
 
-            if (eyeRotationLimitComponent != null)
+
+            if ( GetComponent<EyeRotationLimits>() != null )
             {
                 // Update parameters from eye rotation component
+                EyeRotationLimits eyeRotationLimitComponent = GetComponent<EyeRotationLimits>();
 
                 leftEyeMinX = eyeRotationLimitComponent.LeftEyeMinX;
                 leftEyeMaxX = eyeRotationLimitComponent.LeftEyeMaxX;
@@ -716,13 +716,12 @@ namespace com.NovaVoidHowl.dev.unity.CASCSS
       }
 
 #if KAFE_CVR_CCK_EYE_MOVEMENT_FIX_EXISTS
+            
             // Check if the eye rotation component exists
-            eyeRotationLimitComponent = GetComponent<EyeRotationLimits>();
-
-            if (eyeRotationLimitComponent != null)
+            if ( GetComponent<EyeRotationLimits>() != null)
             {
                 // Remove the component from the gameObject
-                DestroyImmediate(eyeRotationLimitComponent);
+                DestroyImmediate( GetComponent<EyeRotationLimits>());
                 // report that the component was removed to console
                 Debug.Log("EyeRotationLimits component removed from avatar");
             }
@@ -765,3 +764,4 @@ namespace com.NovaVoidHowl.dev.unity.CASCSS
     }
   }
 }
+#endif

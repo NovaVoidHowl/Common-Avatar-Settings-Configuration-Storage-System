@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 using System;
@@ -842,3 +843,4 @@ namespace com.NovaVoidHowl.dev.unity.CASCSS
     }
   }
 }
+#endif
