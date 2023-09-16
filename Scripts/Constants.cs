@@ -8,7 +8,7 @@ namespace com.NovaVoidHowl.dev.unity.CASCSS
   public static class Constants
   {
     // version info
-    public const string CASCSS_version = "0.0.1-alpha";
+    public const string CASCSS_version = "0.0.2-alpha";
     public const int CASCSS_version_width = 105;
 
     // info messages

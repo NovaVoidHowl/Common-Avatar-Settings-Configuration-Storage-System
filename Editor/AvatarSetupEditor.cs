@@ -647,8 +647,8 @@ namespace com.NovaVoidHowl.dev.unity.CASCSS
       EditorGUILayout.BeginHorizontal();
       GUILayout.FlexibleSpace();
       EditorGUILayout.LabelField(
-        "Powered By NVH's Common Avatar Settings Configuration & Storage System",
-        GUILayout.Width(440)
+        "Powered By NVH's CASCS System",
+        GUILayout.Width(200)
       );
       EditorGUILayout.EndHorizontal();
       EditorGUILayout.BeginHorizontal();
